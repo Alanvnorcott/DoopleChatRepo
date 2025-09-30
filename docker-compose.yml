@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+  coturn:
+    image: coturn/coturn:4.6-alpine
+    command: ["-c", "/etc/turnserver.conf"]
+    volumes:
+      - ./coturn/turnserver.conf:/etc/turnserver.conf:ro
+    ports:
+      - "3478:3478/udp"
+      - "3478:3478/tcp"
+      - "5349:5349/tcp"
+      - "5349:5349/udp"
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

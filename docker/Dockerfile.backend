@@ -1,0 +1,19 @@
+### Multi-stage Dockerfile for Dooplechat backend (Node + TypeScript)
+FROM node:18-alpine AS builder
+WORKDIR /app
+# Install build deps and compile
+COPY backend/package.json backend/package-lock.json* ./
+COPY backend/tsconfig.json ./
+COPY backend/src ./src
+RUN npm install --legacy-peer-deps
+RUN npm run build
+
+FROM node:18-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+COPY backend/package.json ./
+# Install only production deps
+RUN npm install --production --legacy-peer-deps
+COPY --from=builder /app/dist ./dist
+EXPOSE 8080
+CMD ["node", "dist/server.js"]

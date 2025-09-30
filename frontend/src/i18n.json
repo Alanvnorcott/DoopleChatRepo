@@ -1,0 +1,22 @@
+{
+  "title": "Dooplechat",
+  "valueProp": "Anonymous 1:1 text and video chat.",
+  "startText": "Start Text Chat",
+  "startVideo": "Start Video Chat",
+  "agePrompt": "Are you 18 years or older?",
+  "yes": "Yes",
+  "no": "No",
+  "blocked": "Sorry, you must be 18+ to use Dooplechat.",
+  "waiting": "Waiting for partner...",
+  "next": "Next",
+  "report": "Report",
+  "startVideoBtn": "Start Video",
+  "mute": "Mute",
+  "unmute": "Unmute",
+  "cameraOff": "Camera Off",
+  "cameraOn": "Camera On",
+  "couldNotConnect": "Could not connect, try Next",
+  "interestsPlaceholder": "Type an interest and press Enter"
+}
+
+

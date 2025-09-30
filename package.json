@@ -1,0 +1,11 @@
+{
+  "name": "dooplechat-monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "start": "node backend/dist/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

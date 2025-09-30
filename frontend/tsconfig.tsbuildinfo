@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/env.d.ts","./src/main.tsx","./src/lib/signaling.ts","./src/lib/webrtc.ts","./src/lib/wsclient.ts"],"version":"5.9.2"}
